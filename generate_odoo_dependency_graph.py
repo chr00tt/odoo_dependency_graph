@@ -13,9 +13,7 @@ def get_module_dependencies(addons_path, module_name):
         return []
     manifest_path = os.path.join(module_path, '__manifest__.py')
     if not os.path.exists(manifest_path):
-        print(f"__manifest__.py not found in {module_name}")
         manifest_path = os.path.join(addons_path, module_name, '__openerp__.py')
-        print(f"manifest_path: {manifest_path}")
     if not os.path.exists(manifest_path):
         return []
 
